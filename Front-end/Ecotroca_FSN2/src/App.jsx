@@ -1,13 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import PublicarItem from './pages/PublicarItem'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
+    
       <Routes>
         <Route path="/publicar" element={<PublicarItem />} />
       </Routes>
-    </Router>
+
+    </BrowserRouter>
   )
 }
 
