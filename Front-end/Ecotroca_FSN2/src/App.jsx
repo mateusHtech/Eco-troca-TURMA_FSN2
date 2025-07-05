@@ -1,14 +1,19 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Router, Routes, Route } from 'react-router-dom'
 import PublicarItem from './pages/PublicarItem'
+import MeuPerfil from './pages/MeuPerfil'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter> 
+    
       <Routes>
         <Route path="/publicar" element={<PublicarItem />} />
+        <Route path="/meuperfil" element={<MeuPerfil /> } />
       </Routes>
-    </Router>
+    
+    </BrowserRouter>
   )
 }
 
 export default App
+
