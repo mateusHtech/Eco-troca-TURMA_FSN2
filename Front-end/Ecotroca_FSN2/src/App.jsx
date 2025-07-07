@@ -3,6 +3,7 @@ import PublicarItem from './pages/PublicarItem';
 import Home from './pages/Home';
 import DetalhesItem from './pages/ItemDetalhes';
 import Login from './pages/Login';
+import MeuPerfil from './pages/MeuPerfil';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/detalhes/:id" element={<DetalhesItem />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/MeuPerfil" element={<MeuPerfil />} />
       </Routes>
     </BrowserRouter>
   );
