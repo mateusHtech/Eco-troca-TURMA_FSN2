@@ -106,7 +106,6 @@ const Home = () => {
       temp = temp.filter(p =>
         p.nome.toLowerCase().includes(termoBusca) ||
         p.categoria.toLowerCase().includes(termoBusca) ||
-        p.descricao.toLowerCase().includes(termoBusca) ||
         p.cidade.toLowerCase().includes(termoBusca) // busca por cidade também
       );
     }
@@ -186,7 +185,6 @@ const Home = () => {
             <div className={styles['product-title']}>{p.nome}</div>
             <div className={styles['product-category']}>{p.categoria}</div>
             <div className={styles['product-location']}>{p.cidade}</div>
-            <div className={styles['product-description']}>{p.descricao}</div>
             <button
               className={styles['product-btn']}
               onClick={() => navigate(`/detalhes/${p.id}`)} // leva para a tela de detalhes do item
