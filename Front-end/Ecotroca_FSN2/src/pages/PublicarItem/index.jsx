@@ -1,17 +1,11 @@
 import style from './PublicarItem.module.css';
+import EcoTrocaMenu from '../../components/EcoTrocaMenu';
 
 function PublicarItem() {
     return (
         <div>
-            <nav className={style.nav}>
-                <h2>EcoTroca</h2>
-                <ul>
-                    <li><a href="/">Início</a></li>
-                    <li><a href="/publicar">Publicar Item</a></li>
-                    <li><a href="/meus-itens">Meus Itens</a></li>
-                    <li><a href="/perfil">Perfil</a></li>
-                </ul>
-            </nav>
+            <EcoTrocaMenu />
+            
             <div className={style.container}>
                 <h1>Publicar um Item</h1>
 

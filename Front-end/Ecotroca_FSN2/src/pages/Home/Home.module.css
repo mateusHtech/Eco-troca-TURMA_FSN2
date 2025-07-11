@@ -2,196 +2,119 @@
   min-height: 100vh;
   background: #fff;
   font-family: Arial, sans-serif;
+  overflow-x: hidden; 
+  width: 100%;
+}
+
+.filtersContainer {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 32px;
   display: flex;
   flex-direction: column;
-}
-
-.header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 32px 16px 32px;
-  box-sizing: border-box;
-  background: #fff;
-  border-bottom: 1px solid #eee;
-}
-
-.logo {
-  font-size: 1.35rem;
-  font-weight: bold;
-  color: #222;
-}
-
-.header-buttons {
-  display: flex;
   gap: 12px;
 }
 
-.btn-primary {
-  background: #59ce3b;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-primary:hover {
-  background: #47b32e;
-}
-
-.btn-secondary {
-  background: #fff;
-  color: #222;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px 22px;
-  font-weight: 600;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.btn-secondary:hover {
-  background: #f5f5f5;
-}
-
-.filters {
+.filtersRow {
   display: flex;
-  gap: 10px;
-  align-items: center;
-  margin: 32px auto 0 auto;
-  max-width: 1000px;
-  width: 100%;
-  padding: 0 32px;
-  box-sizing: border-box;
+  gap: 15px;
+  flex-wrap: wrap; 
+}
+
+/* Responsividade pro mobile */
+@media (max-width: 576px) {
+  .filtersRow {
+    flex-wrap: nowrap; 
+    gap: 10px;
+  }
+
+  .filter-cidade {
+  flex: 0 0 140px; 
+  min-width: 120px;
+  max-width: 140px;
+}
+
+  .filter-select {
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 .filter-select {
-  padding: 10px 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  flex: 0 0 180px;
+  padding: 10px;
   font-size: 1rem;
-  background: #fafafa;
-   color: #222 !important;
-  background: #fff !important;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 6px;
 }
 
 .search-input {
-  flex: 1;
-  padding: 10px 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  background: #fafafa;
-  margin-left: 0;
-}
-
-.nenhum-produto {
-  color: #222;
-  font-size: 1.05rem;
-  margin: 32px 0 0 0;
-  text-align: center;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 32px;
-  max-width: 1000px;
   width: 100%;
-  margin: 32px auto 0 auto;
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.productsGrid {
+  max-width: 1200px;
+  margin: 20px auto;
   padding: 0 32px;
-  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .product-card {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.03);
-  padding: 0 0 24px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  background: white;
   border: 1px solid #eee;
-  min-height: 320px;
-  transition: box-shadow 0.2s;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .product-card:hover {
-  box-shadow: 0 4px 20px 0 rgba(89,206,59,0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.product-card img {
+.product-image {
   width: 100%;
-  height: 160px;
+  height: 180px; 
   object-fit: cover;
-  border-radius: 12px 12px 0 0;
-  margin-bottom: 16px;
 }
+
 
 .product-title {
-  font-size: 1.08rem;
-  font-weight: 600;
-  margin: 0 0 4px 0;
-  color: #222;
-  padding: 0 16px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 1.1rem;
+  color: #000;
 }
 
 .product-category,
 .product-location {
-  font-size: 0.93rem;
-  color: #5d5d5d;
-  margin: 0 0 0 0;
-  padding: 0 16px;
-}
-
-.product-description {
-  font-size: 0.97rem;
-  color: #888;
-  margin: 8px 0 0 0;
-  padding: 0 16px;
+  padding: 0 10px;
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .product-btn {
+  margin: 10px;
+  width: calc(100% - 20px);
+  padding: 10px;
   background: #59ce3b;
-  color: #fff;
+  color: white;
   border: none;
   border-radius: 6px;
-  padding: 11px 0;
-  width: 85%;
-  margin: 18px 0 0 16px;
-  font-weight: 600;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
 }
 
-.product-btn:hover {
-  background: #47b32e;
-}
-
-.search-input {
-  color: #222;
-}
-.search-input::placeholder {
-  color: #222;
-  opacity: 1;
-}
-
-footer {
+.footer {
   background: #59ce3b;
-  color: #fff;
+  color: white;
   text-align: center;
-  padding: 22px 0 18px 0;
-  font-size: 1rem;
-  margin-top: 48px;
-  border-radius: 0;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  padding: 20px;
+  margin-top: 50px;
 }

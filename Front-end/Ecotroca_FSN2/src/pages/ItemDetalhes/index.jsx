@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./ItemDetalhes.module.css";
 import { useParams, useNavigate } from "react-router-dom";
+import EcoTrocaMenu from "../../components/EcoTrocaMenu";
 
 import bicicletaImg from '../../assets/imagensdaHome/bicicletademontanha.jpg';
-import livroImg from '../../assets/imagensdaHome/Livro-Senhordosaneis.webp';
+import livroImg from '../../assets/imagensdaHome/Livro-Senhordosaneis.jpg';
 import cameraImg from '../../assets/imagensdaHome/cameraDSLR.jpg';
 import mesaImg from '../../assets/imagensdaHome/mesadejantar.jpg';
 import sofaImg from '../../assets/imagensdaHome/sofa2lugares.jpg';
@@ -72,12 +73,7 @@ const DetalhesItem = () => {
 
   return (
     <div className={styles.page}>
-      <header className={styles.header}>
-        <div className={styles.logo} onClick={() => navigate('/')}>EcoTroca</div>
-        <nav className={styles.nav}>
-          <span className={styles.navItem} onClick={() => navigate('/')}>Página Inicial</span>
-        </nav>
-      </header>
+      <EcoTrocaMenu />
 
       <main className={styles.main}>
         <img src={produto.imagem} alt={produto.nome} className={styles.productImage} />
