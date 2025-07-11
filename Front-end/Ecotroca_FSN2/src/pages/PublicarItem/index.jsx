@@ -1,58 +1,84 @@
 import style from './PublicarItem.module.css';
-import EcoTrocaMenu from '../../components/EcoTrocaMenu';
+import { useNavigate } from 'react-router-dom';
 
 function PublicarItem() {
-    return (
-        <div>
-            <EcoTrocaMenu />
-            
-            <div className={style.container}>
-                <h1>Publicar um Item</h1>
+const navigate = useNavigate();
 
-                <form className="form">
+return (
+    <div className={style.page}>
+      <header className={style.header}>
+        <div className={style.logo} onClick={() => navigate('/')}>EcoTroca</div>
+        <nav className={style.nav}>
+          <span className={style.navItem} onClick={() => navigate('/')}>Página Inicial</span>
+        </nav>
+      </header>
 
-                    {/*upload de imagem */}
-                    <div className={style.upload}>
-                        <label htmlFor="imagem">Adicionar Imagem</label>
-                        <input type="file" id="imagem" name="imagem" />
-                    </div>
+      <div className={style.container}>
+        <h1>Publicar um Item</h1>
 
-                    {/* Nome do item*/}
-                    <div className={style.campo}>
-                        <label htmlFor="nome">Nome do Item</label>
-                        <input type="text" id="nome" name="nome" placeholder="Ex: Camisa Preta" />
-                    </div>
+        <form className="form">
 
-                    {/*Descrição*/}
-                    <div className={style.campo}>
-                        <label htmlFor="descricao">Descrição</label>
-                        <textarea id="descricao" name="descricao" placeholder="Descreva o item..."></textarea>
-                    </div>
+          {/* Upload de imagem */}
+          <div className={style.upload}>
+            <label htmlFor="imagem">Adicionar Imagem</label>
+            <input id="imagem" type="file" className={style.hiddenInput} />
+          </div>
 
-                    {/* Categoria */}
-                    <div className={style.campo}>
-                        <label htmlFor="categoria">Categoria</label>
-                        <select id="categoria" name="categoria">
-                            <option value="">Selecione uma categoria</option>
-                            <option value="roupas">Roupas</option>
-                            <option value="eletronicos">Eletrônicos</option>
-                            <option value="moveis">Móveis</option>
-                            <option value="livros">Livros</option>
-                        </select>
-                    </div>
+          {/* Nome do item */}
+          <div className={style.campo}>
+            <label htmlFor="nome">Nome do Item</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Ex: Camisa Preta"
+              className={style.inputTexto}
+            />
+          </div>
 
-                    {/*Cidade/Bairro */}
-                    <div className={style.campo}>
-                        <label htmlFor="localizacao">Cidade/Bairro</label>
-                        <input type="text" id="localizacao" name="localizacao" placeholder="Centro, Fortaleza" />
-                    </div>
+          {/* Descrição */}
+          <div className={style.campo}>
+            <label htmlFor="descricao">Descrição</label>
+            <textarea
+              id="descricao"
+              name="descricao"
+              placeholder="Descreva o item..."
+              className={style.inputTexto}
+            ></textarea>
+          </div>
 
-                    {/*Botão */}
-                    <button type="submit" className={style.botao}>Publicar Item</button>                
-                </form>
-            </div>
-        </div>
-    )
+          {/* Categoria */}
+          <div className={style.campo}>
+            <label htmlFor="categoria">Categoria</label>
+            <select id="categoria" name="categoria" className={style.inputTexto}>
+              <option value="">Selecione uma categoria</option>
+              <option value="roupas">Roupas</option>
+              <option value="eletronicos">Eletrônicos</option>
+              <option value="moveis">Móveis</option>
+              <option value="livros">Livros</option>
+                <option value="esportes">Esportes</option>
+                <option value="instrumentos">Instrumentos Musicais</option>
+            </select>
+          </div>
+
+          {/* Cidade/Bairro */}
+          <div className={style.campo}>
+            <label htmlFor="localizacao">Cidade/Bairro</label>
+            <input
+              type="text"
+              id="localizacao"
+              name="localizacao"
+              placeholder="Fortaleza, Centro"
+              className={style.inputTexto}
+            />
+          </div>
+
+          {/* Botão */}
+          <button type="submit" className={style.botao}>Publicar Item</button>
+        </form>
+      </div>
+    </div>
+  );
 }
 
-export default PublicarItem; 
+export default PublicarItem;
