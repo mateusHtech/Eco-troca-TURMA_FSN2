@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import DetalhesItem from './pages/ItemDetalhes';
 import Login from './pages/Login';
 import MeuPerfil from './pages/MeuPerfil';
+import CadUsuario from './pages/CadUsuario';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/detalhes/:id" element={<DetalhesItem />} />
         <Route path="/login" element={<Login />} />
         <Route path="/meuperfil" element={<MeuPerfil />} />
+        <Route path="/CadUsuario" element={<CadUsuario />} />
       </Routes>
     </BrowserRouter>
   );

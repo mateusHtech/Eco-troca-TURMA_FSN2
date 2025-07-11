@@ -1,0 +1,104 @@
+/* Container geral com fundo degradê EcoTroca */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #d9f8e5, #c6f3db);
+  padding: 20px;
+  color: black;
+}
+
+/* Formulário centralizado com sombra e borda arredondada */
+.formBox {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(20, 105, 20, 0.847);
+  width: 100%;
+  max-width: 500px;
+  
+}
+
+.inputGroup input,
+.inputGroup select {
+  color: #2d6a4f;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Título centralizado */
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2d6a4f;
+  font-weight: 700;
+}
+
+/* Agrupamento de input e ícone */
+.inputGroup {
+  position: relative;
+  margin-bottom: 1.2rem;
+  color: black;
+}
+
+.inputGroup input,
+.inputGroup select {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.inputGroup input[type="file"] {
+  padding-left: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  border-color: #2d6a4f;
+}
+
+/* Ícones à esquerda */
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #2d6a4f;
+  font-size: 1rem;
+}
+
+/* Botão com degradê */
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #38b000, #2d6a4f);
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .formBox {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+}
